@@ -1184,6 +1184,19 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+animated-number-vue@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/animated-number-vue/-/animated-number-vue-0.1.4.tgz#d60447582e5375ac006137f41c40fdddac76171e"
+  integrity sha512-uitUYaPs5SjPNxUwNVGsFM3Wb86n02IpyWsQs9lYzwYbihWLe+2/UYjin61SxSLNqgJnhQOWsax3vYj9txY7oQ==
+  dependencies:
+    animejs "^2.2.0"
+    vue "^2.5.13"
+
+animejs@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-2.2.0.tgz#35eefdfc535b81949c9cb06f0b3e60c02e6fdc80"
+  integrity sha1-Ne79/FNbgZScnLBvCz5gwC5v3IA=
+
 ansi-colors@^3.0.0:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.3.tgz#57d35b8686e851e2cc04c403f1c00203976a1813"
@@ -8429,7 +8442,12 @@ vue-the-mask@^0.11.1:
   resolved "https://registry.yarnpkg.com/vue-the-mask/-/vue-the-mask-0.11.1.tgz#91ee01008354ae57bccc79bb61b65f32d971d9d5"
   integrity sha512-UquSfnSWejD0zAfcD+3jJ1chUAkOAyoxya9Lxh9acCRtrlmGcAIvd0cQYraWqKenbuZJUdum+S174atv2AuEHQ==
 
-vue@^2.5.21:
+vue2-transitions@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/vue2-transitions/-/vue2-transitions-0.2.3.tgz#69c9d75b1db05f231b80980c03459d68490ba27d"
+  integrity sha512-Ou5x74AOQbM8JjZV8pIssFFqavvj53QzrEEUr5QnElUYb1ZizPwaUJo0ZqmLPqjwPae7ON4SG8U2cSTI4tHKLg==
+
+vue@^2.5.13, vue@^2.5.21:
   version "2.5.22"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.22.tgz#3bf88041af08b8539c37b268b70ca79245e9cc30"
   integrity sha512-pxY3ZHlXNJMFQbkjEgGVMaMMkSV1ONpz+4qB55kZuJzyJOhn6MSy/YZdzhdnumegNzVTL/Dn3Pp4UrVBYt1j/g==

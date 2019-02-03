@@ -10,19 +10,21 @@
           <th>Сумма</th>
         </tr>
       </thead>
-      <tbody>
+      <fade-transition
+        group mode="out-in"
+        tag="tbody">
         <tr
           v-for="product in order"
           :key="product.id">
           <td>{{ product.name }}</td>
           <td>{{ product.quantity }}</td>
           <td>{{ product.price }}</td>
-          <td>{{ product.quantity * product.price }}</td>
+          <td><animated-number :value="product.quantity * product.price" :duration="450" easing="easeInOutQuad" :formatValue="formatToPrice" /></td>
         </tr>
-      </tbody>
+      </fade-transition>
     </table>
 
-    <p>Итого: <b>{{ summary }}</b></p>
+    <p>Итого: <b><animated-number :value="summary" :duration="450" easing="easeInOutQuad" :formatValue="formatToPrice" /></b></p>
     <button @click="toCheckOut" :disabled="summary < 1" type="button" >Заказать</button>
 
     <v-slide :active="showCheckOut">
@@ -71,11 +73,17 @@
 <script>
 
 import { mask } from 'vue-the-mask';
+import { FadeTransition } from 'vue2-transitions';
+import AnimatedNumber from 'animated-number-vue';
 
 export default {
   name: 'Cart',
   directives: {
-    mask
+    mask,
+  },
+  components: {
+    FadeTransition,
+    AnimatedNumber,
   },
 
   data: () => ({
@@ -91,21 +99,17 @@ export default {
 
   computed: {
     summary () {
-      const summs = this.order
+      return this.order
         .map( product => product.price * product.quantity )
         .reduce(( accumulator , currentValue ) => (accumulator + currentValue), 0 );
-      return summs;
     }
   },
 
   methods: {
     addProduct (product) {
       const isExist = this.order.find( ord => ord.id === product.id );
-      if (isExist) {
-        isExist.quantity += 1;
-      } else {
-        this.order.push(product);
-      }
+      if (isExist) isExist.quantity += 1;
+      else this.order.push(product);
     },
 
     toCheckOut () {
@@ -118,6 +122,10 @@ export default {
       console.log('Заказ - ', order );
       console.log('Форма - ', form );
     },
+
+    formatToPrice (value) {
+      return value.toFixed(2);
+    }
 
   },
 
